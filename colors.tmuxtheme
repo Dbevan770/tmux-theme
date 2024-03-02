@@ -1,0 +1,32 @@
+# NOTE: you can use vars with $<var> and ${<var>} as long as the str is double quoted: ""
+# WARNING: hex colors can't contain capital letters
+
+# Heavily based on Catppuccin Mocha
+# Includes additional colors not present
+# in the Catppuccin tmux theme as well as
+# name changes to match their style guide
+thm_base="#1e1e2e"
+thm_crust="#11111b"
+thm_mantle="#181825"
+thm_surface_0="#313244"
+thm_surface_1="#45475a"
+thm_surface_2="#585b70"
+thm_overlay_0="#6c7086"
+thm_overlay_1="#7f849c"
+thm_overlay_2="#9399b2"
+thm_text="#cdd6f4"
+thm_subtext_0="#a6adc8"
+thm_subtext_1="#bac2de"
+thm_blue="#89b4fa"
+thm_green="#a6e3a1"
+thm_yellow="#f9e2af"
+thm_red="#f38ba8"
+thm_rosewater="#f5e0dc"
+thm_lavender="#b4befe"
+thm_pink="#f5c2e7"
+thm_teal="#94e2d5"
+thm_peach="#fab387"
+thm_mauve="#cba6f7"
+thm_sapphire="#74c7ec"
+thm_sky="#89dceb"
+thm_maroon="#eba0ac"
