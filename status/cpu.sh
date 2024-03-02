@@ -1,8 +1,15 @@
 show_cpu() {
-  tmux set-option -g @cpu_low_bg_color "$thm_yellow" # background color when cpu is low
-  tmux set-option -g @cpu_medium_bg_color "$thm_peach" # background color when cpu is medium
-  tmux set-option -g @cpu_high_bg_color "$thm_red" # background color when cpu is high
+  # Background colors based on CPU usage
+  local cpu_low_bg_color="$(get_tmux_option "@theme_cpu_low_bg_color" "${thm_green}")"
+  local cpu_medium_bg_color="$(get_tmux_option "@theme_cpu_medium_bg_color" "${thm_yellow}")"
+  local cpu_high_bg_color="$(get_tmux_option "@theme_cpu_high_bg_color" "${thm_red}")"
 
+  # Set the Colors based on the custom values
+  tmux set-option -g @cpu_low_bg_color "$cpu_low_bg_color"
+  tmux set-option -g @cpu_medium_bg_color "$cpu_medium_bg_color"
+  tmux set-option -g @cpu_high_bg_color "$cpu_high_bg_color"
+
+  # Module configuration
   local index=$1
   local icon=$(get_tmux_option "@theme_cpu_icon" "")
   local color="$(get_tmux_option "@theme_cpu_color" "#{cpu_bg_color}")"
