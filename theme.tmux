@@ -366,7 +366,7 @@ main() {
   local status_right_separator=$(get_tmux_option "@theme_status_right_separator" "█")
   local status_right_separator_inverse=$(get_tmux_option "@theme_status_right_separator_inverse" "no")
   local status_connect_separator=$(get_tmux_option "@theme_status_connect_separator" "yes")
-  local status_fill=$(get_tmux_option "@theme_status_fill" "icon")
+  local status_fill=$(get_tmux_option "@theme_status_fill" "all")
 
   local status_modules_right=$(get_tmux_option "@theme_status_modules_right" "application session")
   local loaded_modules_right=$(load_modules "$status_modules_right" "$modules_custom_path" "$modules_status_path")

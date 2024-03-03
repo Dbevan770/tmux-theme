@@ -16,49 +16,43 @@ show_battery() {
   local batt_icon_status_charged="$(get_tmux_option "@theme_batt_icon_status_charged" "󰚥")"
   local batt_icon_status_charging="$(get_tmux_option "@theme_batt_icon_status_charging" "󰂄")"
   local batt_icon_status_discharging="$(get_tmux_option "@theme_batt_icon_status_discharging" "󰂃")"
+  local batt_icon_status_attached="$(get_tmux_option "@theme_batt_icon_status_attached" "󰂂")"
   local batt_icon_status_unknown="$(get_tmux_option "@theme_batt_icon_status_unknown" "󰂑")"
 
   # Check for user defined colors
   # Primary colors -- Discharging state
-  local batt_color_charge_primary_tier8=$(get_tmux_option "@theme_batt_color_charge_primary_tier8" "$thm_green")
-  local batt_color_charge_primary_tier7=$(get_tmux_option "@theme_batt_color_charge_primary_tier7" "$thm_green")
-  local batt_color_charge_primary_tier6=$(get_tmux_option "@theme_batt_color_charge_primary_tier6" "$thm_green")
-  local batt_color_charge_primary_tier5=$(get_tmux_option "@theme_batt_color_charge_primary_tier5" "$thm_yellow")
-  local batt_color_charge_primary_tier4=$(get_tmux_option "@theme_batt_color_charge_primary_tier4" "$thm_yellow")
-  local batt_color_charge_primary_tier3=$(get_tmux_option "@theme_batt_color_charge_primary_tier3" "$thm_yellow")
-  local batt_color_charge_primary_tier2=$(get_tmux_option "@theme_batt_color_charge_primary_tier2" "$thm_red")
-  local batt_color_charge_primary_tier1=$(get_tmux_option "@theme_batt_color_charge_primary_tier1" "$thm_red")
+  local batt_color_charge_primary_tier8=$(get_tmux_option "@theme_batt_color_charge_primary_tier8" "$thm_mantle")
+  local batt_color_charge_primary_tier7=$(get_tmux_option "@theme_batt_color_charge_primary_tier7" "$thm_mantle")
+  local batt_color_charge_primary_tier6=$(get_tmux_option "@theme_batt_color_charge_primary_tier6" "$thm_mantle")
+  local batt_color_charge_primary_tier5=$(get_tmux_option "@theme_batt_color_charge_primary_tier5" "$thm_mantle")
+  local batt_color_charge_primary_tier4=$(get_tmux_option "@theme_batt_color_charge_primary_tier4" "$thm_mantle")
+  local batt_color_charge_primary_tier3=$(get_tmux_option "@theme_batt_color_charge_primary_tier3" "$thm_mantle")
+  local batt_color_charge_primary_tier2=$(get_tmux_option "@theme_batt_color_charge_primary_tier2" "$thm_mantle")
+  local batt_color_charge_primary_tier1=$(get_tmux_option "@theme_batt_color_charge_primary_tier1" "$thm_mantle")
 
   # Secondary colors -- Discharging state
-  local batt_color_charge_secondary_tier8=$(get_tmux_option "@theme_batt_color_charge_secondary_tier8" "$thm_mantle")
-  local batt_color_charge_secondary_tier7=$(get_tmux_option "@theme_batt_color_charge_secondary_tier7" "$thm_mantle")
-  local batt_color_charge_secondary_tier6=$(get_tmux_option "@theme_batt_color_charge_secondary_tier6" "$thm_mantle")
-  local batt_color_charge_secondary_tier5=$(get_tmux_option "@theme_batt_color_charge_secondary_tier5" "$thm_mantle")
-  local batt_color_charge_secondary_tier4=$(get_tmux_option "@theme_batt_color_charge_secondary_tier4" "$thm_mantle")
-  local batt_color_charge_secondary_tier3=$(get_tmux_option "@theme_batt_color_charge_secondary_tier3" "$thm_mantle")
-  local batt_color_charge_secondary_tier2=$(get_tmux_option "@theme_batt_color_charge_secondary_tier2" "$thm_mantle")
-  local batt_color_charge_secondary_tier1=$(get_tmux_option "@theme_batt_color_charge_secondary_tier1" "$thm_mantle")
+  local batt_color_charge_secondary_tier8=$(get_tmux_option "@theme_batt_color_charge_secondary_tier8" "$thm_green")
+  local batt_color_charge_secondary_tier7=$(get_tmux_option "@theme_batt_color_charge_secondary_tier7" "$thm_green")
+  local batt_color_charge_secondary_tier6=$(get_tmux_option "@theme_batt_color_charge_secondary_tier6" "$thm_green")
+  local batt_color_charge_secondary_tier5=$(get_tmux_option "@theme_batt_color_charge_secondary_tier5" "$thm_yellow")
+  local batt_color_charge_secondary_tier4=$(get_tmux_option "@theme_batt_color_charge_secondary_tier4" "$thm_yellow")
+  local batt_color_charge_secondary_tier3=$(get_tmux_option "@theme_batt_color_charge_secondary_tier3" "$thm_yellow")
+  local batt_color_charge_secondary_tier2=$(get_tmux_option "@theme_batt_color_charge_secondary_tier2" "$thm_red")
+  local batt_color_charge_secondary_tier1=$(get_tmux_option "@theme_batt_color_charge_secondary_tier1" "$thm_red")
 
-  # Foreground colors -- Charging state
-  local batt_fg_color_full_charge=$(get_tmux_option "@theme_batt_fg_color_full_charge" "$thm_mantle")
-  local batt_fg_color_high_charge=$(get_tmux_option "@theme_batt_fg_color_high_charge" "$thm_mantle")
-  local batt_fg_color_medium_charge=$(get_tmux_option "@theme_batt_fg_color_medium_charge" "$thm_mantle")
-  local batt_fg_color_low_charge=$(get_tmux_option "@theme_batt_fg_color_low_charge" "$thm_mantle")
-  local batt_fg_color_charging=$(get_tmux_option "@theme_batt_fg_color_charging" "$thm_mantle")
+  # Primary colors -- Charging state
+  local batt_color_charged=$(get_tmux_option "@theme_batt_color_charged" "$thm_mantle")
+  local batt_color_charging=$(get_tmux_option "@theme_batt_color_charging" "$thm_mantle")
+  local batt_color_discharging=$(get_tmux_option "@theme_batt_color_discharging" "$thm_mantle")
+  local batt_color_attached=$(get_tmux_option "@theme_batt_color_attached" "$thm_mantle")
+  local batt_color_unknown=$(get_tmux_option "@theme_batt_color_unknown" "$thm_mantle")
 
-  # Background colors -- Charging state
-  local batt_bg_color_full_charge=$(get_tmux_option "@theme_batt_bg_color_full_charge" "$thm_green")
-  local batt_bg_color_high_charge=$(get_tmux_option "@theme_batt_bg_color_high_charge" "$thm_green")
-  local batt_bg_color_medium_charge=$(get_tmux_option "@theme_batt_bg_color_medium_charge" "$thm_yellow")
-  local batt_bg_color_low_charge=$(get_tmux_option "@theme_batt_bg_color_low_charge" "$thm_red")
-  local batt_bg_color_charging=$(get_tmux_option "@theme_batt_bg_color_charging" "$thm_peach")
-
-  # Combine foreground and background colors -- Charging state
-  local batt_color_full_charge="#[fg=$batt_fg_color_full_charge,bg=$batt_bg_color_full_charge]"
-  local batt_color_high_charge="#[fg=$batt_fg_color_high_charge,bg=$batt_bg_color_high_charge]"
-  local batt_color_medium_charge="#[fg=$batt_fg_color_medium_charge,bg=$batt_bg_color_medium_charge]"
-  local batt_color_low_charge="#[fg=$batt_fg_color_low_charge,bg=$batt_bg_color_low_charge]"
-  local batt_color_charging="#[fg=$batt_fg_color_charging,bg=$batt_bg_color_charging]"
+  # Secondary colors -- Charging state
+  local batt_color_charged_bg=$(get_tmux_option "@theme_batt_color_charged_bg" "$thm_sky")
+  local batt_color_charging_bg=$(get_tmux_option "@theme_batt_color_charging_bg" "$thm_green")
+  local batt_color_discharging_bg=$(get_tmux_option "@theme_batt_color_discharging_bg" "$thm_red")
+  local batt_color_attached_bg=$(get_tmux_option "@theme_batt_color_attached_bg" "$thm_sky")
+  local batt_color_unknown_bg=$(get_tmux_option "@theme_batt_color_unknown_bg" "$thm_red")
 
   # Set the battery icons
   tmux set-option -g @batt_icon_charge_tier8 "$batt_icon_charge_tier8"
@@ -71,6 +65,7 @@ show_battery() {
   tmux set-option -g @batt_icon_charge_tier1 "$batt_icon_charge_tier1"
   tmux set-option -g @batt_icon_status_charged "$batt_icon_status_charged"
   tmux set-option -g @batt_icon_status_charging "$batt_icon_status_charging"
+  tmux set-option -g @batt_icon_status_attached "$batt_icon_status_attached"
   tmux set-option -g @batt_icon_status_discharging "$batt_icon_status_discharging"
   tmux set-option -g @batt_icon_status_unknown "$batt_icon_status_unknown"
 
@@ -93,11 +88,16 @@ show_battery() {
   tmux set-option -g @batt_color_charge_secondary_tier1 "$batt_color_charge_secondary_tier1"
 
   # Set the battery colors -- Charging state
-  tmux set-option -g @batt_color_full_charge "$batt_color_full_charge"
-  tmux set-option -g @batt_color_high_charge "$batt_color_high_charge"
-  tmux set-option -g @batt_color_medium_charge "$batt_color_medium_charge"
-  tmux set-option -g @batt_color_low_charge "$batt_color_low_charge"
-  tmux set-option -g @batt_color_charging "$batt_color_charging"
+  tmux set-option -g @batt_color_status_primary_charged "$batt_color_charged"
+  tmux set-option -g @batt_color_status_primary_charging "$batt_color_charging"
+  tmux set-option -g @batt_color_status_primary_discharging "$batt_color_discharging"
+  tmux set-option -g @batt_color_status_primary_attached "$batt_color_attached"
+  tmux set-option -g @batt_color_status_primary_unknown "$batt_color_unknown"
+  tmux set-option -g @batt_color_status_secondary_charged "$batt_color_charged_bg"
+  tmux set-option -g @batt_color_status_secondary_charging "$batt_color_charging_bg"
+  tmux set-option -g @batt_color_status_secondary_discharging "$batt_color_discharging_bg"
+  tmux set-option -g @batt_color_status_secondary_attached "$batt_color_attached_bg"
+  tmux set-option -g @batt_color_status_secondary_unknown "$batt_color_unknown_bg"
 
   local index=$1
   local icon=$(get_tmux_option "@theme_battery_icon" "#{battery_icon}")

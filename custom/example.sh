@@ -1,10 +1,11 @@
 show_example() {
   local index=$1
   local icon="$(get_tmux_option "@theme_test_icon" "󰙨")"
-  local color="$(get_tmux_option "@theme_test_color" "$thm_blue")"
+  local color="$(get_tmux_option "@theme_test_color" "$thm_mantle")"
+  local background="$(get_tmux_option "@theme_test_bg" "$thm_pink")"
   local text="$(get_tmux_option "@theme_test_text" "It works!")"
 
-  local module=$( build_status_module "$index" "$icon" "$color" "$text" )
+  local module=$( build_status_module "$index" "$icon" "$color" "$background" "$text" )
 
   echo "$module"
 }
