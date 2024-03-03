@@ -195,7 +195,8 @@ build_status_module() {
   local index=$1
   local icon=$2
   local color=$3
-  local text=$4
+  local background=$4
+  local text=$5
 
   if [ "$status_fill" = "icon" ]
   then
@@ -220,10 +221,10 @@ build_status_module() {
 
   if [ "$status_fill" = "all" ]
   then
-    local show_left_separator="#[fg=$color,bg=$thm_surface_0,nobold,nounderscore,noitalics]$status_left_separator"
+    local show_left_separator="#[fg=$color,bg=$background,nobold,nounderscore,noitalics]$status_left_separator"
 
-    local show_icon="#[fg=$thm_base,bg=$color,nobold,nounderscore,noitalics]$icon "
-    local show_text="#[fg=$thm_base,bg=$color]$text"
+    local show_icon="#[fg=$background,bg=$color,nobold,nounderscore,noitalics]$icon "
+    local show_text="#[fg=$background,bg=$color]$text"
 
     local show_right_separator="#[fg=$color,bg=$thm_surface_0,nobold,nounderscore,noitalics]$status_right_separator"
 
@@ -233,8 +234,8 @@ build_status_module() {
       local show_right_separator="#[fg=$color,bg=$color,nobold,nounderscore,noitalics]$status_right_separator"
 
     else
-      local show_left_separator="#[fg=$color,bg=$thm_base,nobold,nounderscore,noitalics]$status_left_separator"
-      local show_right_separator="#[fg=$color,bg=$thm_base,nobold,nounderscore,noitalics]$status_right_separator"
+      local show_left_separator="#[fg=$color,bg=$background,nobold,nounderscore,noitalics]$status_left_separator"
+      local show_right_separator="#[fg=$color,bg=$background,nobold,nounderscore,noitalics]$status_right_separator"
     fi
 
   fi
@@ -243,15 +244,15 @@ build_status_module() {
   then
     if [ "$status_connect_separator" = "yes" ]
     then
-      local show_right_separator="#[fg=$thm_surface_0,bg=$color,nobold,nounderscore,noitalics]$status_right_separator"
+      local show_right_separator="#[fg=$background,bg=$color,nobold,nounderscore,noitalics]$status_right_separator"
     else
-      local show_right_separator="#[fg=$thm_base,bg=$color,nobold,nounderscore,noitalics]$status_right_separator"
+      local show_right_separator="#[fg=$background,bg=$color,nobold,nounderscore,noitalics]$status_right_separator"
     fi
   fi
 
   if [ $(($index)) -eq 0  ]
   then
-      local show_left_separator="#[fg=$color,bg=$thm_base,nobold,nounderscore,noitalics]$status_left_separator"
+      local show_left_separator="#[fg=$color,bg=$background,nobold,nounderscore,noitalics]$status_left_separator"
   fi
 
   echo "$show_left_separator$show_icon$show_text$show_right_separator"
